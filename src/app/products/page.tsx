@@ -15,7 +15,6 @@ const parse = (param: Param) => {
 const ProductsPage = ({
   searchParams,
 }: ProductsPageProps) => {
-  const sort = parse(searchParams.sort)
   const category = parse(searchParams.category)
 
   const label = PRODUCT_CATEGORIES.find(
@@ -27,12 +26,8 @@ const ProductsPage = ({
       <ProductReel
        title={label ?? 'Discover Top-Quality Listings'}
        query={{
-          category,
+          category, // Filter by category
           limit: 40,
-          sort:
-            sort === 'desc' || sort === 'asc'
-              ? sort
-              : undefined,
         }}
       />
     </MaxWidthWrapper>

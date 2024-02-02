@@ -70,3 +70,9 @@
   background: white !important;
   scale: 1 !important ;
 }
+
+
+.mobile-nav-container {
+  display: flex;
+  justify-content: flex-end;
+}

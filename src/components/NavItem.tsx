@@ -26,7 +26,7 @@ const NavItem = ({
 }: NavItemProps) => {
   return (
     <div className='flex'>
-      <div className='relative flex items-center'>
+      <div className='relative  flex items-center'>
       <Link href={`/products?category=${category.value}`} passHref>
        
           <Button className="gap-1.5" variant="ghost">

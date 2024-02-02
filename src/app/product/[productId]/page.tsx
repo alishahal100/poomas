@@ -137,9 +137,9 @@ const Page = async ({ params }: PageProps) => {
             <div className='mt-4'>
             <WhatsAppChatButton product={product} />
           </div>
-              <div className='mt-10'>
+              {/* <div className='mt-10'>
                 <AddToCartButton product={product} />
-              </div>
+              </div> */}
               {/* <div className='mt-6 text-center'>
                 <div className='group inline-flex text-sm text-medium'>
                   <Shield

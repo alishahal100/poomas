@@ -8,7 +8,6 @@ import { getServerSideUser } from '@/lib/payload-utils'
 import { cookies } from 'next/headers'
 import UserAccountNav from './UserAccountNav'
 import MobileNav from './MobileNav'
-
 const Navbar = async () => {
   const nextCookies = cookies()
   const { user } = await getServerSideUser(nextCookies)
@@ -19,9 +18,9 @@ const Navbar = async () => {
         <MaxWidthWrapper>
           <div className='border-b border-gray-200'>
             <div className='flex h-16 items-center'>
-              <MobileNav />
+              <MobileNav  user={user} />
 
-              <div className='ml-4 flex lg:ml-0'>
+              <div className=' flex lg:ml-0 ml-[70%]'>
                 <Link href='/'>
                   <img src='/favicon.ico' className='h-20 w-20' />
                 </Link>
@@ -79,7 +78,7 @@ const Navbar = async () => {
                   )}
 
                   <div className='ml-4 flow-root lg:ml-6'>
-                    <Cart />
+                    {/* <Cart /> */}
                   </div>
                 </div>
               </div>
