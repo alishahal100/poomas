@@ -41,7 +41,7 @@ const Page = async ({ params }: PageProps) => {
     },
   })
   const productUrl = `${process.env.
-    NEXT_PUBLIC_SERVER_URL}/products/${productId}`;
+    NEXT_PUBLIC_SERVER_URL}/product/${productId}`;
   console.log(productUrl);
   
 
