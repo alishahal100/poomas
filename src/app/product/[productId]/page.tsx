@@ -6,6 +6,7 @@ import WhatsAppChatButton from '@/components/whatsApp'
 import { PRODUCT_CATEGORIES } from '@/config'
 import { getPayloadClient } from '@/get-payload'
 import { formatPrice } from '@/lib/utils'
+import { log } from 'console'
 import { Check, MapPin, Shield } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -20,6 +21,7 @@ const BREADCRUMBS = [
   { id: 1, name: 'Home', href: '/' },
   { id: 2, name: 'Products', href: '/products' },
 ]
+
 
 const Page = async ({ params }: PageProps) => {
   const { productId } = params
@@ -38,6 +40,11 @@ const Page = async ({ params }: PageProps) => {
       },
     },
   })
+  const productUrl = `${process.env.
+    NEXT_PUBLIC_SERVER_URL}/products/${productId}`;
+  console.log(productUrl);
+  
+
 
   const [product] = products
 
@@ -135,7 +142,7 @@ const Page = async ({ params }: PageProps) => {
           <div className='mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start'>
             <div>
             <div className='mt-4'>
-            <WhatsAppChatButton product={product} />
+            <WhatsAppChatButton product={product} productUrl={productUrl} />
           </div>
               {/* <div className='mt-10'>
                 <AddToCartButton product={product} />

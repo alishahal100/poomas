@@ -1,20 +1,22 @@
 // WhatsAppChatButton.tsx
 'use client'
 import { formatPrice } from '@/lib/utils';
-interface Product {
-    name: string;
-    price: number;
-    description: string | null | undefined;
-  }
-  
-  interface WhatsAppChatButtonProps {
-    product: Product;
-  }
-  
+import React from 'react';
 
-const WhatsAppChatButton: React.FC<WhatsAppChatButtonProps> = ({ product }) => {
+interface Product {
+  name: string;
+  price: number;
+  description: string | null | undefined;
+}
+
+interface WhatsAppChatButtonProps {
+  product: Product;
+  productUrl: string;
+}
+
+const WhatsAppChatButton: React.FC<WhatsAppChatButtonProps> = ({ product, productUrl }) => {
   const openWhatsAppChat = () => {
-    const message = `Check out this product: ${product.name}\nPrice: ${formatPrice(product.price)}\nDescription: ${product.description}`;
+    const message = `Check out this product: ${product.name}\nPrice: ${formatPrice(product.price)}\nDescription: ${product.description}\nProduct URL: ${productUrl}`;
     const whatsappURL = `https://wa.me/7356323421?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
   };
