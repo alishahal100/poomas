@@ -1,7 +1,10 @@
+import { CarFront } from "lucide-react";
+
 export const PRODUCT_CATEGORIES = [
   {
     label: 'Apartments',
     value: 'apartments' as const,
+    img:'/town.png',
     featured: [
       {
         name: 'Apartments for Rent',
@@ -23,6 +26,7 @@ export const PRODUCT_CATEGORIES = [
   {
     label: 'Shops',
     value: 'Shops' as const,
+    img:'/store.png',
     featured: [
       {
         name: 'Full-time Positions',
@@ -44,6 +48,29 @@ export const PRODUCT_CATEGORIES = [
   {
     label: 'Vehicles',
     value: 'vehicles' as const,
+    img:'/sedan.png',
+    featured: [
+      {
+        name: 'Used Cars',
+        href: '/listings?category=vehicles&type=used&vehicle_type=car',
+        imageSrc: 'https://placekitten.com/300/203', // Replace with actual image URL
+      },
+      {
+        name: 'Motorcycles',
+        href: '/listings?category=vehicles&type=all&vehicle_type=motorcycle',
+        imageSrc: 'https://placekitten.com/300/204', // Replace with actual image URL
+      },
+      {
+        name: 'Boats',
+        href: '/listings?category=vehicles&type=all&vehicle_type=boat',
+        imageSrc: 'https://placekitten.com/300/205', // Replace with actual image URL
+      },
+    ],
+  },
+  {
+    label: 'Bike Accessories',
+    value: 'Bike Accessories' as const,
+    img:'/cassette.png',
     featured: [
       {
         name: 'Used Cars',

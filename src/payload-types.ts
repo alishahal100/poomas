@@ -43,7 +43,7 @@ export interface Product {
   description: string | null;
   Location:string 
   price: number;
-  category: 'apartments' | 'Shops' |'vehicles';
+  category: string;
   product_files: string | ProductFile;
   approvedForSale?: ('pending' | 'approved' | 'denied') | null;
   priceId?: string | null;

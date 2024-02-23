@@ -1,8 +1,23 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { PRODUCT_CATEGORIES } from "@/config";
 import { ArrowDownToLine, CheckCircle, Leaf } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { CarFrontIcon, } from "lucide-react";
+
+interface Category {
+  label: string;
+  value: string;
+  img:string | null;
+  featured: {
+    name: string;
+    href: string;
+    imageSrc: string;
+  }[];
+}
+
 
 const perks = [
   {
@@ -46,6 +61,23 @@ export default function Home() {
             <Button variant="ghost">Learn More &rarr;</Button>
           </div>
         </div>
+       <section className="w-full h-auto  flex flex-col gap-5  justify-center ml-auto">
+        <div>
+
+        <h1 className="text-3xl font-bold">Categories</h1>
+        </div>
+        <div className="grid  grid-cols-2 lg:grid-cols-4 gap-24  ">
+
+  {PRODUCT_CATEGORIES.map((category, index) => (
+    <div key={index} className=" shadow-md px-10 py-4 flex gap-5 cursor-pointer items-center justify-center">
+      <Link href={`/products?category=${category.value}`}>
+        <Image src={category.img} alt={category.label} width={100} height={90} />
+        <p className="text-md font-semibold mt-4">{category.label}</p>
+      </Link>
+    </div>
+  ))}
+  </div>
+</section>
 
         <ProductReel
           query={{ sort: "desc", limit: 4 }}
@@ -55,6 +87,7 @@ export default function Home() {
       </MaxWidthWrapper>
 
       <section className="border-t border-gray-200 bg-gray-50">
+       
         <MaxWidthWrapper className="py-20">
           <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-0">
             {perks.map((perk) => (
