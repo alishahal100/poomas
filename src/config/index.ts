@@ -68,8 +68,8 @@ export const PRODUCT_CATEGORIES = [
     ],
   },
   {
-    label: 'Bike Accessories',
-    value: 'Bike Accessories' as const,
+    label: 'Products',
+    value: 'Products' as const,
     img:'/cassette.png',
     featured: [
       {

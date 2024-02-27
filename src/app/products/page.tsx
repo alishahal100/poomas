@@ -49,7 +49,7 @@ const ProductsPage = ({
     e.preventDefault();
     const { category, name, model, priceRange, location } = formData;
     const message = ` Name: ${name} Model: ${model} Price Range: ${priceRange} Location: ${location}`;
-    const whatsappLink = `https://wa.me/7356323421?text=${encodeURIComponent(message)}`;
+    const whatsappLink = `https://wa.me/+971568066069?text=${encodeURIComponent(message)}`;
     window.open(whatsappLink, '_blank');
   };
 

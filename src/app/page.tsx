@@ -69,7 +69,7 @@ export default function Home() {
         <div className="grid  grid-cols-2 lg:grid-cols-4 gap-24  ">
 
   {PRODUCT_CATEGORIES.map((category, index) => (
-    <div key={index} className=" shadow-md px-10 py-4 flex gap-5 cursor-pointer items-center justify-center">
+    <div key={index} className=" shadow-md px-10 py-4 flex gap-5 cursor-pointer items-center text-center justify-center">
       <Link href={`/products?category=${category.value}`}>
         <Image src={category.img} alt={category.label} width={100} height={90} />
         <p className="text-md font-semibold mt-4">{category.label}</p>

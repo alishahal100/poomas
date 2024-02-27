@@ -144,10 +144,17 @@ export const Products: CollectionConfig = {
         condition: () => false,
       },
     },
+    
     {
       name: 'name',
-      label: 'Name',
+      label: 'Product Name',
       type: 'text',
+      required: true,
+    },
+    {
+      name: 'contactnumber',
+      type: 'text',
+      label:'contact number',
       required: true,
     },
     {
@@ -177,7 +184,104 @@ export const Products: CollectionConfig = {
         ({ label, value }) => ({ label, value })
       ),
       required: true,
+      
+        
     },
+    {
+      name: 'Year',
+      label: 'manufacturing year',
+      type: 'number', // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'Color',
+      label: 'Interior color',
+      type: "text", // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'exteriorColor',
+      label: 'exterior color',
+      type: "text", // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'variant',
+      label: 'variant',
+      type: "text", // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'trim',
+      label: 'trim',
+      type: "text", // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'bodyType',
+      label: 'Body Type',
+      type: "text", // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'sellerType',
+      label: 'Seller Type',
+      type: "text", // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'Kilometers',
+      label: 'kilometers driven',
+      type: 'number', // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'seatingCapacity',
+      label: 'Seating Capacity',
+      type: 'number', // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+    {
+      name: 'fuelType',
+      label: 'Fuel type',
+      type: 'select',
+      options: ['petrol', 'diesel', 'electric', 'hybrid'],
+      defaultValue: 'petrol',
+      admin: {
+        condition: (values) => values.category === 'vehicles', // Show this field only if 'vehicles' category is selected
+      },
+    },
+    
+    {
+      name: 'transmission', 
+      label:'Transmission Type',
+      type: 'select',
+      options: ['automatic', 'manual'],
+      defaultValue: 'automatic', // You can change this to any appropriate input type
+      admin: {
+        condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
+      },
+    },
+   
+   
     {
       name: 'product_files',
       label: 'Product file(s)',

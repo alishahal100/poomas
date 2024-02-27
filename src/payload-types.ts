@@ -38,6 +38,7 @@ export interface User {
 }
 export interface Product {
   id: string;
+  contactnumber:string;
   user?: (string | null) | User;
   name: string;
   description: string | null;
@@ -54,6 +55,19 @@ export interface Product {
   }[];
   updatedAt: string;
   createdAt: string;
+  vehicleDescription?:string;
+  seatingCapacity?:number;
+  Kilometers?:number;
+  fuelType?:string;
+  transmission?:string;
+  year?:number;
+  Color?:string;
+  exteriorColor?:string;
+  variant?:string;
+  trim?:string;
+  bodyType?:string;
+  sellerType?:string;
+  
 }
 export interface ProductFile {
   id: string;
