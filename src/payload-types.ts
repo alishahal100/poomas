@@ -60,7 +60,7 @@ export interface Product {
   Kilometers?:number;
   fuelType?:string;
   transmission?:string;
-  year?:number;
+  Year?:number;
   Color?:string;
   exteriorColor?:string;
   variant?:string;
