@@ -104,32 +104,43 @@ const Page = async ({ params }: PageProps) => {
                 <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
                   {label}
                 </div>
-                <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
-                  
-                  {product.Kilometers} {" km"}
-                </div>
+                {
+                  product.Kilometers &&(
+                    <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
+                      {product.Kilometers} km
+                    </div>
+                  )
+                }
+                
               </div>
 
               <div className="-ml-3 flex mt-2">
-                <div className=" flex gap-3  text-muted-foreground border-gray-300 pl-4">
-                
-                  {product.fuelType}
-                </div>
-                <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
-                
-                  {product.transmission}
-                </div>
-                <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
-                  {product.seatingCapacity &&
-                    `${product.seatingCapacity} seater`}
-                </div>
-                <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
-                  {product.year}
-                </div>
-                <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
-                  {product.exteriorColor}
-                </div>
-                
+                {product.fuelType && (
+                  <div className="flex gap-3  text-muted-foreground border-gray-300 pl-4">
+                    <FuelIcon />
+                    {product.fuelType}
+                  </div>
+                )}
+                {product.transmission && (
+                  <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
+                    {product.transmission}
+                  </div>
+                )}
+                {product.seatingCapacity && (
+                  <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
+                    {product.seatingCapacity} seater
+                  </div>
+                )}
+                {product.year && (
+                  <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
+                    {product.year}
+                  </div>
+                )}
+                {product.exteriorColor && (
+                  <div className="ml-4 border-l text-muted-foreground border-gray-300 pl-4">
+                    {product.exteriorColor}
+                  </div>
+                )}
               </div>
 
               <p className="text-base text-muted-foreground mt-2">
@@ -161,20 +172,6 @@ const Page = async ({ params }: PageProps) => {
               <div className="mt-4">
                 <WhatsAppChatButton product={product} productUrl={productUrl} />
               </div>
-              {/* <div className='mt-10'>
-                <AddToCartButton product={product} />
-              </div> */}
-              {/* <div className='mt-6 text-center'>
-                <div className='group inline-flex text-sm text-medium'>
-                  <Shield
-                    aria-hidden='true'
-                    className='mr-2 h-5 w-5 flex-shrink-0 text-gray-400'
-                  />
-                  <span className='text-muted-foreground hover:text-gray-700'>
-                    30 Day Return Guarantee
-                  </span>
-                </div>
-              </div> */}
             </div>
           </div>
         </div>

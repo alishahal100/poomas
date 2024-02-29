@@ -264,7 +264,7 @@ export const Products: CollectionConfig = {
       label: 'Fuel type',
       type: 'select',
       options: ['petrol', 'diesel', 'electric', 'hybrid'],
-      defaultValue: 'petrol',
+      
       admin: {
         condition: (values) => values.category === 'vehicles', // Show this field only if 'vehicles' category is selected
       },
@@ -275,7 +275,7 @@ export const Products: CollectionConfig = {
       label:'Transmission Type',
       type: 'select',
       options: ['automatic', 'manual'],
-      defaultValue: 'automatic', // You can change this to any appropriate input type
+       
       admin: {
         condition: (value) => value.category === 'vehicles', // Show this field only if 'vehicle' category is selected
       },
